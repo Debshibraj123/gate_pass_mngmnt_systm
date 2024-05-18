@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Pass Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 600px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .details {
+            margin-top: 20px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        p:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gate Pass Details</h1>
+        <div class="details">
+            <p><span class="detail-label">Name:</span> {{ gate_pass.name }}</p>
+            <p><span class="detail-label">Email:</span> {{ gate_pass.email }}</p>
+            <p><span class="detail-label">Date of Birth:</span> {{ gate_pass.dob }}</p>
+            <p><span class="detail-label">Contact Number:</span> {{ gate_pass.contact_no }}</p>
+            <p><span class="detail-label">Department:</span> {{ gate_pass.department }}</p>
+            <p><span class="detail-label">Reason to Meet:</span> {{ gate_pass.reason_to_meet }}</p>
+        </div>
+    </div>
+</body>
+</html>

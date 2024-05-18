@@ -6,3 +6,15 @@ class GatePassForm(forms.ModelForm):
     class Meta:
         model = GatePass
         fields = ['name', 'email', 'dob', 'image', 'contact_no', 'department', 'reason_to_meet']
+        widgets = {
+            'dob': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+
+class OnSpotRegistrationForm(forms.ModelForm):
+    class Meta:
+        model = GatePass
+        fields = ['name', 'email', 'dob', 'image', 'contact_no', 'department', 'reason_to_meet']
+        widgets = {
+            'dob': forms.DateInput(attrs={'type': 'date'}),
+        }

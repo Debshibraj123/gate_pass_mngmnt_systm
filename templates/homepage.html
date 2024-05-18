@@ -1,4 +1,3 @@
-<!-- base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,43 +6,162 @@
     <title>{% block title %}Home{% endblock %}</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f9;
         }
 
         .navbar {
-            background-color: #333;
-            padding: 10px;
+            background-color: #1e3d59;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .navbar ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .navbar ul li {
-            display: inline;
             margin-right: 20px;
         }
 
         .navbar ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .hero-section {
-            background-color: #f2f2f2;
-            padding: 50px 0;
+            background: url('https://images.unsplash.com/photo-1547895749-888a559fc2a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGluZHVzdHJpYWx8ZW58MHx8MHx8fDA%3D') no-repeat center center/cover;
+            padding: 150px 20px 100px;
             text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('https://www.svgrepo.com/show/88872/waves.svg') no-repeat center bottom/cover;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff3b3b;
+        }
+
+        .content {
+            padding: 60px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            font-size: 1.2em;
+            color: #444;
+            margin-bottom: 10px;
         }
 
         .footer {
-            background-color: #333;
+            background-color: #1e3d59;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .hero-section {
+                padding: 100px 20px 50px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-section p {
+                font-size: 1.2em;
+            }
+
+            .btn-primary {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            .content h2 {
+                font-size: 2em;
+            }
+
+            .content p, .content ul li {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -57,7 +175,20 @@
 
     <div class="hero-section">
         <h1>Welcome to Gate Pass System</h1>
-        <!-- Add more content here if needed -->
+        <p>Manage your entries and exits seamlessly with our secure system.</p>
+        <a href="{% url 'security_register' %}" class="btn-primary">Get Started</a>
+    </div>
+
+    <div class="content">
+        <h2>About Our System</h2>
+        <p>Our Gate Pass System offers a reliable and efficient way to manage access to your premises. Whether you are an officer or a security personnel, our system is designed to make your job easier and more secure.</p>
+        <h2>Features</h2>
+        <ul>
+            <li>Easy to use interface</li>
+            <li>Real-time monitoring</li>
+            <li>Secure and reliable</li>
+            <li>Comprehensive reporting</li>
+        </ul>
     </div>
 
     <footer class="footer">
